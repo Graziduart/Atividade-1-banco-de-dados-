@@ -1,0 +1,104 @@
+ Banco de Dados (atividade 1)
+
+CREATE TABLE livros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    título VARCHAR(60),
+    autor VARCHAR(60),
+    editora VARCHAR(60),
+    ano_publicacao INT,
+    preco DECIMAL(10, 2)
+);
+
+
+
+
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60),
+    e_mail VARCHAR(100),
+    endereco VARCHAR(100)
+);
+
+
+
+
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    data_pedido DATE,
+    total DECIMAL(10, 2),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+
+
+
+CREATE TABLE livros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    título VARCHAR(60),
+    autor VARCHAR(60),
+    editora VARCHAR(60),
+    ano_publicacao INT,
+    preco DECIMAL(10, 2)
+);
+
+
+
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60),
+    e_mail VARCHAR(100),
+    endereco VARCHAR(100)
+);
+
+
+
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    data_pedido DATE,
+    total DECIMAL(10, 2),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+
+
+
+
+(individual/ Marina) Locadora de filmes 
+
+CREATE TABLE locadora (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60),
+    endereco VARCHAR(100),
+    telefone VARCHAR(20)
+);
+
+
+
+
+CREATE TABLE filmes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(60),
+    genero VARCHAR(30),
+    ano_lancamento INT,
+    preco_aluguel DECIMAL(10, 2)
+);
+
+
+
+
+CREATE TABLE locadora_filmes (
+    id_locadora INT,
+    id_filme INT,
+    PRIMARY KEY (id_locadora, id_filme),
+    FOREIGN KEY (id_locadora) REFERENCES locadora(id),
+    FOREIGN KEY (id_filme) REFERENCES filmes(id)
+);
+
+
+
+
+
+
+
